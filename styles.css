@@ -124,7 +124,7 @@ nav {
 
 .comparison-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -232,7 +232,10 @@ nav {
     background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
     border-radius: 15px;
+    /* Modern browsers */
     backdrop-filter: blur(10px);
+    /* Fallback for browsers without backdrop-filter support */
+    background: rgba(42, 82, 152, 0.9);
 }
 
 .power-chart h3 {
@@ -273,12 +276,11 @@ nav {
 }
 
 .power-table tbody tr {
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .power-table tbody tr:hover {
     background-color: #f8f9fa;
-    transform: scale(1.02);
 }
 
 .power-table tbody tr.legendary {
