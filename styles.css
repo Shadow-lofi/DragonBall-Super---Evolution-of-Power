@@ -1,0 +1,235 @@
+  body {
+            margin: 0;
+            font-family: Copperplate, Papyrus, fantasy;
+            background: linear-gradient(to bottom, #000, #003f88);
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #f77f00;
+            background-color: rgba(0, 119, 255, 0.546);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #fcbf49;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #hero {
+            background: url('https://wallpapers.com/images/featured/dragon-ball-super-31k7m53hb2l6rbge.jpg') no-repeat center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            text-shadow: 2px 2px 4px #000;
+            position: relative;
+        }
+
+        #hero h1 {
+            font-family: Copperplate, Papyrus, fantasy;
+            color: #ffffff;
+            font-size: 4rem;
+            margin:0;
+            animation: auraPulse 2s infinite alternate;
+        }
+
+        #hero h2 {
+            font-family: Copperplate, Papyrus, fantasy;
+            font-size: 2rem;
+            margin: 10px 0 0 0;
+            animation: auraPulse 2s infinite alternate;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            animation: auraPulse 2s infinite alternate;
+        }
+        
+        .hero-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(45deg, #f77f00, #fcbf49);
+            border: 2px solid #003f88;
+            border-radius: 25px;
+            cursor: url('https://sweezy-cursors.com/wp-content/uploads/cursor/dragon-ball-goku-arrow-animated/dragon-ball-goku-arrow-animated-cursor-1.png'), auto;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #fcbf49;
+        }
+
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(252, 191, 73, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+
+        .hero-button:hover::before {
+            width: 200px;
+            height: 200px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255,255,255,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .gallery img:nth-child(1) { animation-delay: 0.2s; }
+        .gallery img:nth-child(2) { animation-delay: 0.4s; }
+        .gallery img:nth-child(3) { animation-delay: 0.6s; }
+        .gallery img:nth-child(4) { animation-delay: 0.8s; }
+        .gallery img:nth-child(5) { animation-delay: 1s; }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #fcbf49;
+        }
+
+        .videos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .videos iframe {
+            margin: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .videos iframe:nth-child(1) { animation-delay: 0.2s;}
+        .videos iframe:nth-child(2) { animation-delay: 0.4s;}
+        #power-levels table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        #power-levels th, #power-levels td {
+            border: 1px solid #fcfcfc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        #power-levels th {
+            background: #f77f00;
+        }
+
+        #comparisons img {
+            margin-top: 40px;
+        }
+
+        #comparison select, #comaprison button {
+            padding: 10px;
+            margin: 10px;
+            background: #003f88;
+            color: #fff;
+            border: 1px solid #fcbf49;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        #comaprison button:hover, #comparison select:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #fcbf49;
+        }
+
+        #stories.accordion {
+            background: rgba(0, 63, 136, 0.8);
+            color: #fff;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: background 0.4s;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        #stories.accordion.active, #stories.accordion:hover {
+            background: #f77f00;
+            animation: auraPulse 1s infinite alternate;
+        }
+
+        #stories.panel {
+            padding: 0 18px;
+            background: rgba(0,0,0,0.7);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            border-radius: 5px;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        #stories.panel p {
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #f77f00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        @keyframes auraPulse {
+            0% { text-shadow: 2px 2px 4px #000, 0 0 10px #fcbf49; box-shadow: 0 0 10px #fcbf49; }
+            100% { text-shadow: 2px 2px 4px #000, 0 0 20px #003f88; box-shadow: 0 0 20px #003f88; }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
